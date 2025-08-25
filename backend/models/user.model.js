@@ -33,7 +33,7 @@ const userSchema = mongoose.Schema({
             ref: 'Product'
         }
     }]
-},{timestamp: true});
+},{timestamps: true});
 
 userSchema.pre('save', async function(next){
     if(!this.isModified('password')) return next();
