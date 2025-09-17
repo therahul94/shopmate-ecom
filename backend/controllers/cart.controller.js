@@ -4,7 +4,7 @@ export const addToCart = async(req, res) => {
     const {productId} = req.body;
     try {
         const user = req.user;
-        const existingProduct = user.cartItems.find(item => item.product === productId);
+        const existingProduct = user.cartItems.find(item => item.id === productId);
         if(existingProduct) {
             existingProduct.quantity += 1;
         }
@@ -25,7 +25,7 @@ export const removeAllFromCart = async(req, res) => {
         if(!productId) {
             user.cartItems = [];
         }else {
-            user.cartItems = user.cartItems.filter(item => item.product !== productId);
+            user.cartItems = user.cartItems.filter(item => item.id !== productId);
         }
         await user.save();
         return res.json(user.cartItems);
@@ -41,7 +41,7 @@ export const getCartProducts = async(req, res) => {
         const products = await Product.find({_id: {$in: user.cartItems}});
         // add quantity to each product 
         const cartItems = products.map(product => {
-            const item = user.cartItems.find(item => item.product === product._id);
+            const item = user.cartItems.find(item => item.id === product.id);
             return {...product.toJSON(), quantity: item.quantity};
         });
 
@@ -56,11 +56,11 @@ export const updateQuantity = async(req, res) => {
         const {id: productId} = req.params;
         const {quantity} = req.body;
         const user = req.user;
-        const existingItem = user.cartItems.find(item => item.product === productId);
+        const existingItem = user.cartItems.find(item => item.id === productId);
         if(existingItem){
             if(quantity === 0) {
                 // remove the product from the cart.
-                user.cartItems = user.cartItems.filter(item => item.product !== productId);
+                user.cartItems = user.cartItems.filter(item => item.id !== productId);
             }
             else {
                 existingItem.quantity = quantity;

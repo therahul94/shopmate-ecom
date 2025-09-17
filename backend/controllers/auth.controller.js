@@ -121,3 +121,12 @@ export const refreshToken = async (req, res) => {
         return res.status(500).json({ message: "Server Error", error: error.message });
     }
 }
+
+export const getProfile = async (req, res) => {
+    try {
+        return res.json(req.user);
+    } catch (error) {
+        console.log("Error in getProfile Controller", error.message);
+        return res.status(500).json({"message" : "Server Error", error: error.message});
+    }
+}
