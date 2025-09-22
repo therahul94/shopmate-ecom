@@ -1,10 +1,13 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCartStore } from '../stores/useCartStore'
 import { Minus, Plus, Trash } from 'lucide-react';
 
 const CartItem = ({item}) => {
     const { removeFromCart, updateQuantity } = useCartStore();
     let [quantity, setQuantity] = useState(item.quantity);
+    useEffect(()=>{
+        setQuantity(item.quantity)
+    }, [item.quantity])
 
     /*
         1. Why not just let intervalId = 0; inside the component?

@@ -16,7 +16,7 @@ export const getAnalytics = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("Error in getAnalytics Controller", error.response);
+        console.log("Error in getAnalytics Controller", error.message);
         return res.status(500).json({ message: "Server Error", error: error.response });
     }
 }
@@ -58,7 +58,7 @@ const getDailySalesData = async (startDate, endDate) => {
                 }
             }, {
                 $group: {
-                    _id: { $dateToString: { format: `%y-%m-%d`, date: "$createdAt" } },
+                    _id: { $dateToString: { format: `%Y-%m-%d`, date: "$createdAt" } },
                     sales: { $sum: 1 },
                     revenue: { $sum: "$totalAmount" }
                 }
@@ -67,6 +67,17 @@ const getDailySalesData = async (startDate, endDate) => {
             }
         ]);
 
+        // Why we are doing the below things, isn't it extra?
+        /*
+            The problem with aggregation is, This only returns days where sales actually happend.
+            If you had orders on Sept 1 and Sept 3, but nothing on Sept 2, the result will be:
+            [
+                { _id: "25-09-01", sales: 5, revenue: 1000 },
+                { _id: "25-09-03", sales: 2, revenue: 400 }
+            ]
+            Notice Sept 2 is missing.
+            The getDatesInRange + map step forces every date in the range to appear in the result, even if it has 0 sales.
+        */
         const dateArray = getDatesInRange(startDate, endDate);
         return dateArray.map(date => {
             const foundData = dailySalesData.find(item => item._id === date);
