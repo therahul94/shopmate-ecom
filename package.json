@@ -11,6 +11,9 @@
   "author": "rahul kurmalkar",
   "type": "module",
   "license": "ISC",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cloudinary": "^2.7.0",
