@@ -1,6 +1,6 @@
 ### Setup .env file
-`
-PORT=5000
+
+`PORT=5000
 MONGO_URI=your_mongo_uri
 
 UPSTASH_REDIS_URL=your_redis_url
@@ -14,8 +14,7 @@ CLOUDINARY_API_SECRET=your_api_secret
 
 STRIPE_SECRET_KEY=your_stripe_secret_key
 CLIENT_URL=http://localhost:5173
-NODE_ENV=development
-`
+NODE_ENV=development`
 ### Run this app locally
 `npm run build`
 
