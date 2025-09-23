@@ -1,4 +1,4 @@
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Create a `.env` file in the root directory and add the following:
 ```env
@@ -20,7 +20,14 @@ NODE_ENV=development
 ```
 
 ### Run this app locally
-`npm run build`
+```npm run build```
 
-### Start the web app
-`npm run dev`
+### Start the server
+```npm run start```
+
+### Start locally
+```npm run dev```
+
+
+
+
