@@ -44,9 +44,9 @@ const categories = [
 const HomePage = () => {
   const { getCartItems } = useCartStore();
   const { products, loading, fetchFeaturedProducts } = useProductStore();
-  useEffect(() => {
-    getCartItems();
-  }, [getCartItems])
+  // useEffect(() => {
+  //   getCartItems();
+  // }, [getCartItems])
 
   useEffect(() => {
     fetchFeaturedProducts();
