@@ -13,11 +13,11 @@ import path from 'path';
 
 dotenv.config();
 const app = express();
-app.use(express.json());
-app.use(cookieParser());
-const PORT = process.env.PORT || 5000;
-
 const __dirname = path.resolve();
+const PORT = process.env.PORT || 5000;
+app.use(express.json({ limit: "10mb" }));
+app.use(cookieParser());
+
 
 // app.use(cors({
 //     origin: process.env.CLIENT_URL, 
@@ -38,10 +38,10 @@ if (process.env.NODE_ENV === "production") {
     // app.use("*", (req, res) => {
     //     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
     // })
-    app.get('*', (req, res, next) => {
-        if (req.path.startsWith('/api')) return next();
-        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-    });
+    // app.get('*', (req, res, next) => {
+    //     if (req.path.startsWith('/api')) return next();
+    //     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+    // });
 
 }
 
