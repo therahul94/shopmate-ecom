@@ -78,7 +78,7 @@ Deployed on **Render**.
 ## 📊 Screenshots
 
 ### Home Page
-![Home Page](./assets/homepage.png)(./assets/cart.png)
+![Home Page](./assets/homepage.png)
 
 ### Cart
 ![Cart Page](./assets/cart.png)
