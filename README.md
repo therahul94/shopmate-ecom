@@ -77,14 +77,20 @@ Deployed on **Render**.
 
 ## 📊 Screenshots
 
-### 🏠 Home Page
+### Home Page
 ![Home Page](./assets/homepage.png)(./assets/cart.png)
 
-### 📈 Admin Dashboard
+### Cart
+![Cart Page](./assets/cart.png)
+
+### Admin Dashboard
 ![Admin Dashboard](./assets/analytics.png)
 
-### 💳 Checkout Flow
-![Checkout Flow](./assets/checkout.png)(./assets/purchasesuccess.png)
+### Checkout Flow
+![Checkout Flow](./assets/checkout.png)
+
+### Purchase Success 
+![Purchase Success](./assets/purchasesuccess.png)
 
 ## ⚡ Installation & Setup
 
