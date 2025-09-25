@@ -78,13 +78,13 @@ Deployed on **Render**.
 ## 📊 Screenshots
 
 ### 🏠 Home Page
-![Home Page](./assets/homepage.png)
+![Home Page](./assets/homepage.png)(./assets/cart.png)
 
 ### 📈 Admin Dashboard
 ![Admin Dashboard](./assets/analytics.png)
 
 ### 💳 Checkout Flow
-![Checkout Flow](./assets/checkout.png)
+![Checkout Flow](./assets/checkout.png)(./assets/purchasesuccess.png)
 
 ## ⚡ Installation & Setup
 
