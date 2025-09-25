@@ -75,6 +75,17 @@ Deployed on **Render**.
 
 ---
 
+## 📊 Screenshots
+
+### 🏠 Home Page
+![Home Page](./assets/homepage.png)
+
+### 📈 Admin Dashboard
+![Admin Dashboard](./assets/analytics.png)
+
+### 💳 Checkout Flow
+![Checkout Flow](./assets/checkout.png)
+
 ## ⚡ Installation & Setup
 
 1. **Clone the repo**
